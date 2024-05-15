@@ -1,0 +1,107 @@
+{
+	"editor": {
+		"collapsedPaths": "Root/origin",
+		"allAngles": false,
+		"entityTextureMode": false
+	},
+	"textureWidth": 16,
+	"textureHeight": 16,
+	"textureSizes": {
+	},
+	"textures": {
+	},
+	"elements": [
+		{
+			"name": "Pole1",
+			"from": [ 7.0, 0.0, 7.0 ],
+			"to": [ 9.0, 16.0, 9.0 ],
+			"rotationOrigin": [ 8.0, 0.0, 8.0 ],
+			"rotationY": 45.0,
+			"faces": {
+				"north": { "texture": "#oak", "uv": [ 8.5, 0.0, 10.5, 16.0 ] },
+				"east": { "texture": "#oak", "uv": [ 4.5, 0.0, 6.5, 16.0 ] },
+				"south": { "texture": "#oak", "uv": [ 8.5, 0.0, 10.5, 16.0 ] },
+				"west": { "texture": "#oak", "uv": [ 3.0, 0.0, 5.0, 16.0 ] },
+				"down": { "texture": "#oak", "uv": [ 2.5, 3.5, 4.5, 5.5 ] }
+			},
+			"children": [
+				{
+					"name": "Pole2",
+					"from": [ 0.0, 16.0, 0.0 ],
+					"to": [ 2.0, 32.0, 2.0 ],
+					"rotationOrigin": [ 1.5, 9.0, 1.5 ],
+					"faces": {
+						"north": { "texture": "#oak", "uv": [ 11.5, 0.0, 13.5, 16.0 ] },
+						"east": { "texture": "#oak", "uv": [ 4.5, 0.0, 6.5, 16.0 ] },
+						"south": { "texture": "#oak", "uv": [ 3.5, 0.0, 5.5, 16.0 ] },
+						"west": { "texture": "#oak", "uv": [ 7.5, 0.0, 9.5, 16.0 ] }
+					},
+					"children": [
+						{
+							"name": "Pole3",
+							"from": [ 0.0, 16.0, 0.0 ],
+							"to": [ 2.0, 32.0, 2.0 ],
+							"rotationOrigin": [ 1.5, 9.0, 1.5 ],
+							"faces": {
+								"north": { "texture": "#oak", "uv": [ 11.5, 0.0, 13.5, 16.0 ] },
+								"east": { "texture": "#oak", "uv": [ 4.5, 0.0, 6.5, 16.0 ] },
+								"south": { "texture": "#oak", "uv": [ 3.5, 0.0, 5.5, 16.0 ] },
+								"west": { "texture": "#oak", "uv": [ 7.5, 0.0, 9.5, 16.0 ] }
+							},
+							"children": [
+								{
+									"name": "Pole4",
+									"from": [ 0.0, 16.0, 0.0 ],
+									"to": [ 2.0, 32.0, 2.0 ],
+									"rotationOrigin": [ 1.5, -7.0, 1.5 ],
+									"faces": {
+										"north": { "texture": "#oak", "uv": [ 9.0, 0.0, 11.0, 16.0 ] },
+										"east": { "texture": "#oak", "uv": [ 6.5, 0.0, 8.5, 16.0 ] },
+										"south": { "texture": "#oak", "uv": [ 7.5, 0.0, 9.5, 16.0 ] },
+										"west": { "texture": "#oak", "uv": [ 5.5, 0.0, 7.5, 16.0 ] },
+										"up": { "texture": "#oak", "uv": [ 0.5, 1.0, 2.5, 3.0 ] }
+									},
+									"children": [
+										{
+											"name": "Rope1",
+											"from": [ -0.5, -1.0, -0.5 ],
+											"to": [ 0.5, 15.0, 0.5 ],
+											"rotationOrigin": [ 0.0, 15.0, 0.0 ],
+											"rotationX": 2.0,
+											"rotationZ": 2.0,
+											"faces": {
+												"north": { "texture": "#rope", "uv": [ 0.0, 0.0, 1.0, 16.0 ] },
+												"east": { "texture": "#rope", "uv": [ 0.0, 0.0, 1.0, 16.0 ], "windMode": [-1,-1,-1,-1], "windData": [3,4,4,3] },
+												"south": { "texture": "#rope", "uv": [ 0.0, 0.0, 1.0, 16.0 ], "windMode": [-1,-1,-1,-1], "windData": [3,3,4,4] },
+												"west": { "texture": "#rope", "uv": [ 0.0, 0.0, 1.0, 16.0 ], "windMode": [-1,-1,-1,-1], "windData": [3,3,4,4] },
+												"up": { "texture": "#rope", "uv": [ 0.0, 0.0, 1.0, 1.0 ], "windMode": [-1,-1,-1,-1], "windData": [4,4,4,4] },
+												"down": { "texture": "#rope", "uv": [ 0.0, 0.0, 1.0, 1.0 ], "windMode": [-1,-1,-1,-1], "windData": [3,3,3,3] }
+											},
+											"children": [
+												{
+													"name": "Rope2",
+													"from": [ 0.0, -16.0, 0.0 ],
+													"to": [ 1.0, 0.0, 1.0 ],
+													"rotationOrigin": [ 0.5, 0.0, 0.5 ],
+													"rotationX": -2.0,
+													"rotationZ": -2.0,
+													"faces": {
+														"north": { "texture": "#rope", "uv": [ 0.0, 0.0, 1.0, 16.0 ] },
+														"east": { "texture": "#rope", "uv": [ 0.0, 0.0, 1.0, 16.0 ] },
+														"south": { "texture": "#rope", "uv": [ 0.0, 0.0, 1.0, 16.0 ] },
+														"west": { "texture": "#rope", "uv": [ 0.0, 0.0, 1.0, 16.0 ] },
+														"up": { "texture": "#rope", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
+														"down": { "texture": "#rope", "uv": [ 0.0, 0.0, 1.0, 1.0 ] }
+													}
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]}

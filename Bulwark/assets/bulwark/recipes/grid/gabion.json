@@ -1,0 +1,13 @@
+[
+	{
+		"ingredientPattern": "AP_,PSP,_P_",
+		"ingredients": {
+			"A": { "type": "item",  "code": "game:axe-*", "isTool": true  },
+			"P": { "type": "block", "code": "game:log-placed-*-ud", "name": "wood", "allowedVariants": ["birch", "oak", "maple", "pine", "acacia", "kapok", "aged", "baldcypress", "larch", "redwood", "walnut"] },
+			"S": { "type": "item",  "code": "game:stick", "quantity": 4 }
+		},
+		"width":  3,
+		"height": 3,
+		"output": { "type": "block", "code": "bulwark:gabion-{wood}-construct1", "quantity": 8  }
+	}
+]

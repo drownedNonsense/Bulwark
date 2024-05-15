@@ -1,0 +1,42 @@
+[
+	{
+		"ingredientPattern": "BAB,B_B",
+		"ingredients": {
+			"A": { "type": "item", "code": "game:spear-generic-*", "name": "metal", "allowedVariants": ["copper", "tinbronze", "bismuthbronze", "blackbronze"]},
+			"B": { "type": "item", "code": "game:stick", "quantity": 3 }
+		},
+		"width":  3,
+		"height": 2,
+		"output": { "type": "block", "code": "bulwark:logisticpost-{metal}" }
+	},
+	{
+		"ingredientPattern": "BAB,B_B",
+		"ingredients": {
+			"A": { "type": "item", "code": "game:spear-boar-ruined"},
+			"B": { "type": "item", "code": "game:stick", "quantity": 3 }
+		},
+		"width":  3,
+		"height": 2,
+		"output": { "type": "block", "code": "bulwark:logisticpost-ruined" }
+	},
+	{
+		"ingredientPattern": "BAB,B_B",
+		"ingredients": {
+			"A": { "type": "item", "code": "game:spear-generic-ornategold"},
+			"B": { "type": "item", "code": "game:stick", "quantity": 3 }
+		},
+		"width":  3,
+		"height": 2,
+		"output": { "type": "block", "code": "bulwark:logisticpost-gold" }
+	},
+	{
+		"ingredientPattern": "BAB,B_B",
+		"ingredients": {
+			"A": { "type": "item", "code": "game:spear-generic-ornatesilver"},
+			"B": { "type": "item", "code": "game:stick", "quantity": 3 }
+		},
+		"width":  3,
+		"height": 2,
+		"output": { "type": "block", "code": "bulwark:logisticpost-silver" }
+	}
+]

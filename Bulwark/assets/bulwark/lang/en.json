@@ -1,0 +1,71 @@
+{
+    "game:tabname-bulwark": "Bulwark",
+
+    "Under {0}'s command for {1:0.#} days":                    "Under {0}'s command for {1:0.#} days",
+    "Under {0}'s command in the name of {1} for {2:0.#} days": "Under {0}'s command in the name of {1} for {2:0.#} days",
+
+    "{0} is currently being besieged by a small band": "{0} is currently being besieged by a small band",
+    "{0} is currently being besieged by a large band": "{0} is currently being besieged by a large band",
+    "{0} is under attack!":               "{0} is under attack!",
+    "One of your claim is under attack!": "One of your claim is under attack!",
+    "{0} has been captured!":               "{0} has been captured!",
+    "One of your claim has been captured!": "One of your claim has been captured!",
+    "{0} has run out of food!":               "{0} has run out of food!",
+    "One of your claim has run out of food!": "One of your claim has run out of food!",
+    "{0} has been destroyed!":               "{0} has been destroyed!",
+    "One of your claim has been destroyed!": "One of your claim has been destroyed!",
+    "{0} captured {1}":               "{0} captured {1}",
+    "{0} no longer leagues with {1}": "{0} no longer leagues with {1}",
+    "{0} now leagues with {1}":       "{0} now leagues with {1}",
+
+    "+{0} stronghold expectancy": "+{0} stronghold expectancy",
+
+    "You're not in a stronghold you claimed":          "You're not in a stronghold you claimed",
+    "You can use /stronghold name to name your claim": "You can use <i>/stronghold name</i> to name your claim",
+
+    "Banner of {0}": "Banner of {0}",
+    "Ruins of {0}":  "Ruins of {0}",
+
+    "bulwark:block-flagpole-fort": "Flag pole (Fort)",
+    "bulwark:block-flagpole-city": "Flag pole (City)",
+
+    "bulwark:block-gabion-aged-*":        "Gabion (Aged)",
+    "bulwark:block-gabion-birch-*":       "Gabion (Birch)",
+    "bulwark:block-gabion-oak-*":         "Gabion (Oak)",
+    "bulwark:block-gabion-maple-*":       "Gabion (Maple)",
+    "bulwark:block-gabion-pine-*":        "Gabion (Pine)",
+    "bulwark:block-gabion-acacia-*":      "Gabion (Acacia)",
+    "bulwark:block-gabion-kapok-*":       "Gabion (Kapok)",
+    "bulwark:block-gabion-baldcypress-*": "Gabion (Bald cypress)",
+    "bulwark:block-gabion-larch-*":       "Gabion (Larch)",
+    "bulwark:block-gabion-redwood-*":     "Gabion (Redwood)",
+    "bulwark:block-gabion-walnut-*":      "Gabion (Walnut)",
+
+    "bulwark:block-logisticpost-copper":        "Logistic post (Copper spear)",
+    "bulwark:block-logisticpost-tinbronze":     "Logistic post (Tin bronze spear)",
+    "bulwark:block-logisticpost-bismuthbronze": "Logistic post (Bismuth bronze spear)",
+    "bulwark:block-logisticpost-blackbronze":   "Logistic post (Black bronze spear)",
+    "bulwark:block-logisticpost-gold":          "Logistic post (Gold spear)",
+    "bulwark:block-logisticpost-silver":        "Logistic post (Silver spear)",
+    "bulwark:block-logisticpost-iron":          "Logistic post (Iron spear)",
+    "bulwark:block-logisticpost-meteoriciron":  "Logistic post (Meteoric iron spear)",
+    "bulwark:block-logisticpost-steel":         "Logistic post (Steel spear)",
+    "bulwark:block-logisticpost-ruined":        "Logistic post (Ruined spear)",
+
+    "game:ingameerror-stronghold-nobuildprivilege":         "I cannot build here. This place is fortified",
+    "game:ingameerror-stronghold-nobreakprivilege-warning": "Damaging this area might be a declaration of war",
+    "game:ingameerror-stronghold-alreadyclaimed":           "This area is already claimed",
+    "game:ingameerror-stronghold-undergroundflag":          "This flag needs to be raised at the surface",
+
+    "game:ingameerror-logisticpoint-wrongbanner": "This logistic point banner isn't the same as the stronghold's. It won't supply It",
+
+    "game:blockhelp-flag-pullup":   "Pull up the flag",
+    "game:blockhelp-flag-set":      "Attach a banner",
+    "game:blockhelp-flag-pulldown": "Pull down the flag",
+    "game:blockhelp-flag-remove":   "Detach the banner",
+
+    "game:blockhelp-barricade-build": "Build",
+
+    "gamemechanicinfo-stronghold-title": "Bulwark: Stronghold Guide",
+    "gamemechanicinfo-stronghold-text": "<strong>Stronghold Guide</strong><br><br><strong>Strongholds</strong><br>Strongholds center around a flag placed at the surface, within 10 blocks under the world-generated ground (by default). These areas restrict the placement of any blocks except siege equipment in a 64x64x64 area for <a href=\"handbook://block-bulwark:flagpole-fort\">forts</a> and in a 96x96x96 area for <a href=\"handbook://block-bulwark:flagpole-city\">cities</a> (by default). Members receive alerts about attacks, captures, or losses. A high quantity of food is required to keep strongholds active, with up to 4 containers allowed around the flag and equally around each logistic posts. The player who captures the flag gains ownership of the stronghold.<br><br><strong>Logistic Posts</strong><br>Logistic posts allow the binding of multiple food storages to a single flag, including cellars. They must have the same banner as the flag; capturing them stops the supply to the stronghold.<br><br><strong>Barricades</strong><br>Barricades can be set up in enemy strongholds. They need to be broken multiple times before disappearing and are unstable, not allowing for stacking.<br>"
+}

@@ -1,0 +1,96 @@
+{
+	"editor": {
+		"collapsedPaths": "Root/Right/SupportBase4,Root/origin,Root/SupportBase1,Root/SupportBase2,Root/Left/SupportBase1,Root/Left/SupportBase2,Root/Left/SupportBase3,Root/SupportBase3,Root/Left,Root/Right",
+		"allAngles": false,
+		"entityTextureMode": false
+	},
+	"textureWidth": 16,
+	"textureHeight": 16,
+	"textureSizes": {
+	},
+	"textures": {
+	},
+	"elements": [
+		{
+			"name": "Banner1",
+			"from": [ 0.0, 0.0, 0.0 ],
+			"to": [ 16.0, 3.42, 0.228 ],
+			"rotationOrigin": [ 0.0, 0.0, 0.0 ],
+			"rotationX": -180.0,
+			"faces": {
+				"north": { "texture": "#color", "uv": [ 0.0, 0.0, 16.0, 3.0 ] },
+				"east": { "texture": "#color", "uv": [ 0.0, 0.0, 0.5, 3.0 ] },
+				"south": { "texture": "#color", "uv": [ 0.0, 0.5, 16.0, 3.5 ] },
+				"west": { "texture": "#color", "uv": [ 0.0, 0.0, 0.5, 3.0 ] },
+				"down": { "texture": "#color", "uv": [ 0.0, 0.0, 16.0, 0.5 ] }
+			},
+			"children": [
+				{
+					"name": "Banner2",
+					"from": [ 0.0, 3.42, 0.0 ],
+					"to": [ 16.0, 6.84, 0.228 ],
+					"rotationOrigin": [ 0.0, 3.42, 0.0 ],
+					"rotationX": 2.0,
+					"faces": {
+						"north": { "texture": "#color", "uv": [ 0.5, 5.0, 16.5, 8.0 ] },
+						"east": { "texture": "#color", "uv": [ 4.5, 5.0, 5.0, 8.0 ] },
+						"south": { "texture": "#color", "uv": [ 0.5, 4.5, 16.5, 7.5 ] },
+						"west": { "texture": "#color", "uv": [ 11.5, 2.5, 12.0, 5.5 ] },
+						"up": { "texture": "#color", "uv": [ 0.0, 5.5, 16.0, 6.0 ] },
+						"down": { "texture": "#color", "uv": [ 0.0, 6.0, 16.0, 6.5 ] }
+					},
+					"children": [
+						{
+							"name": "Banner3",
+							"from": [ 0.0, 3.42, 0.0 ],
+							"to": [ 16.0, 6.84, 0.228 ],
+							"rotationOrigin": [ 0.0, 3.42, 0.0 ],
+							"rotationX": -4.0,
+							"faces": {
+								"north": { "texture": "#color", "uv": [ 0.5, 9.5, 16.5, 12.5 ] },
+								"east": { "texture": "#color", "uv": [ 9.0, 8.0, 9.5, 11.0 ] },
+								"south": { "texture": "#color", "uv": [ 0.5, 7.0, 16.5, 10.0 ] },
+								"west": { "texture": "#color", "uv": [ 7.0, 11.5, 7.5, 14.5 ] },
+								"up": { "texture": "#color", "uv": [ 0.0, 11.5, 16.0, 12.0 ] },
+								"down": { "texture": "#color", "uv": [ 0.0, 10.5, 16.0, 11.0 ] }
+							},
+							"children": [
+								{
+									"name": "Banner4",
+									"from": [ 0.0, 3.42, 0.0 ],
+									"to": [ 16.0, 6.84, 0.228 ],
+									"rotationOrigin": [ 0.0, 3.42, 0.0 ],
+									"rotationX": 8.0,
+									"faces": {
+										"north": { "texture": "#color", "uv": [ 0.0, 11.0, 16.0, 14.0 ] },
+										"east": { "texture": "#color", "uv": [ 10.0, 10.5, 10.5, 13.5 ] },
+										"south": { "texture": "#color", "uv": [ 0.0, 11.0, 16.0, 14.0 ] },
+										"west": { "texture": "#color", "uv": [ 8.0, 10.0, 8.5, 13.0 ] },
+										"up": { "texture": "#color", "uv": [ 0.0, 13.5, 16.0, 14.0 ] },
+										"down": { "texture": "#color", "uv": [ 0.0, 11.0, 16.0, 11.5 ] }
+									},
+									"children": [
+										{
+											"name": "Banner5",
+											"from": [ 0.0, 3.306, 0.0 ],
+											"to": [ 16.0, 6.726, 0.228 ],
+											"rotationOrigin": [ 0.0, 3.42, 0.0 ],
+											"rotationX": -8.0,
+											"faces": {
+												"north": { "texture": "#color", "uv": [ 0.0, 11.5, 16.0, 14.5 ] },
+												"east": { "texture": "#color", "uv": [ 2.0, 11.0, 2.5, 14.0 ] },
+												"south": { "texture": "#color", "uv": [ 0.0, 11.5, 16.0, 14.5 ] },
+												"west": { "texture": "#color", "uv": [ 6.5, 13.0, 7.0, 16.0 ] },
+												"up": { "texture": "#color", "uv": [ 0.0, 14.0, 16.0, 14.5 ] },
+												"down": { "texture": "#color", "uv": [ 0.0, 15.0, 16.0, 15.5 ] }
+											}
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]}

@@ -1,0 +1,3 @@
+[
+	{ "file": "game:blocktypes/cloth/oreblastingbomb", "op": "add", "path": "/attributes", "value": { "siegeEquipment": true }}
+]

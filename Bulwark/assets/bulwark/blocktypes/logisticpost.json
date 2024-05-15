@@ -1,0 +1,103 @@
+{
+	"code": "logisticpost",
+	"variantgroups": [{ "code": "material", "states": ["copper", "tinbronze", "bismuthbronze", "blackbronze", "gold", "silver", "iron", "meteoriciron", "steel", "ruined"]}],
+	"behaviors": [
+		{ "name": "Unstable" },
+		{ "name": "Logistic", "properties": { "expectancyBonusByType": {
+			"*-copper":        0.0,
+			"*-tinbronze":     0.2,
+			"*-bismuthbronze": 0.3,
+			"*-blackbronze":   0.5,
+			"*-gold":          0.8,
+			"*-silver":        0.8,
+			"*-iron":          0.6,
+			"*-meteoriciron":  0.8,
+			"*-steel":         1.0,
+			"*-ruined":        0.3
+		}}}
+    ],
+	"entityBehaviors": [
+        { "name": "LogisticEntity" }
+	],
+	"attributes": {
+		"canChisel": false,
+		"handbook": { "groupBy": [ "logisticpost-*" ]}
+	},
+    "texturesByType": {
+		"*-ruined": {
+			"wood":  { "base": "game:block/wood/debarked/aged" },
+			"trunk": { "base": "game:block/wood/treetrunk/aged" },
+			"metal": { "base": "game:block/metal/tarnished/iron" }
+		},
+		"*": {
+			"wood":  { "base": "game:block/wood/debarked/oak" },
+			"trunk": { "base": "game:block/wood/treetrunk/oak" },
+			"metal": { "base": "game:block/metal/sheet/{material}1" }
+		}
+    },
+	"creativeinventory": { "general": [""], "bulwark": ["*"] },
+	"maxstacksize": 1,
+	"shape": { "base": "flag/logisticpost" },
+	"blockmaterial": "wood",
+	"replaceable": 90,
+    "faceCullMode": "NeverCull",
+	"sidesolid":  { "all": false },
+	"sideopaque": { "all": false },
+	"sideao":     { "all": false },
+	"emitsideao": { "all": false },
+	"lightAbsorption": 1,
+	"rainPermeable":  true,
+	"resistance": 1.5,
+	"collisionBox": { 
+		"x1": 0, "y1": 0.0, "z1": 0.2,
+		"x2": 1, "y2": 1.5, "z2": 0.8
+	},
+	"selectionBox": { 
+		"x1": -0.1, "y1": 0.0, "z1": 0.2,
+		"x2":  1.1, "y2": 1.5, "z2": 0.8
+	},
+	"dropsByType": {
+		"*-ruined": [{
+			"type": "item", 
+			"code": "game:spear-boar-ruined"
+		}],
+		"*-gold": [{
+			"type": "item", 
+			"code": "game:spear-generic-ornategold"
+		}],
+		"*-silver": [{
+			"type": "item", 
+			"code": "game:spear-generic-ornatesilver"
+		}],
+		"*-iron":         [],
+		"*-meteoriciron": [],
+		"*-steel":        [],
+		"*": [{
+			"type": "item", 
+			"code": "game:spear-generic-{material}"
+		}]
+	},
+	"guiTransform": {
+		"rotation": { "x":   0, "y": -30, "z":   0 },
+		"origin":   { "x": 0.5, "y":   1, "z": 0.5 },
+		"scale": 0.8
+	},
+	"fpHandTransform": {
+		"translation": { "x":   0, "y":   0, "z":   0 },
+		"rotation":    { "x":   0, "y": -90, "z":   0 },
+		"origin":      { "x": 0.5, "y":   1, "z": 0.5 },
+		"scale": 2.75
+	},
+	"tpHandTransform": {
+		"translation": { "x": -0.6, "y": -0.5, "z": -0.6 },
+		"rotation":    { "x":    0, "y":  180, "z":    0 },
+		"origin":      { "x":  0.5, "y":    0, "z":  0.5 },
+		"scale": 0.8
+	},
+	"groundTransform": {
+		"translation": { "x":   0, "y":   0, "z":   0 },
+		"rotation":    { "x": -90, "y":   0, "z":   0 },
+		"origin":      { "x": 0.5, "y": 1.5, "z": 0.5 },
+		"scale": 4.5
+	}
+}

@@ -1,0 +1,56 @@
+{
+	"code": "gabion",
+	"class": "BlockBarricade",
+    "variantgroups": [
+		{ "code": "wood", "states": ["aged"], "loadFromProperties": "game:block/wood" },
+		{ "code": "state", "states": [ "construct1", "construct2", "construct3", "built", "damaged", "broken" ]}
+	],
+    "skipVariants": [ 
+		"*-ebony-*",
+		"*-purpleheart-*"
+	],
+    "behaviors": [{ "name": "UnstableFalling", "properties": { "fallSound": "game:effect/rockslide", "dustIntensity": 0.5 }}],	
+	"attributes": {
+		"canChisel":      false,
+        "siegeEquipment": true,
+		"barricadeMaterial": "game:soil-*",
+		"handbook": { "groupBy": [ "gabion-*" ]}
+	},
+    "textures": {
+        "fertlow":      { "base": "game:block/soil/fertlow" },
+        "wattlefence":  { "base": "game:block/wood/roughfence/{wood}" },
+		"wattlefence2": { "base": "game:block/wood/roughfence/{wood}2" }
+    },
+	"creativeinventory": {
+		"general": ["*-construct1"],
+		"bulwark": ["*-construct1"]
+	},
+	"shape": { "base": "barricade/gabion/{state}" },
+	"blockmaterial": "wood",
+    "randomSizeAdjust":   0.1,
+	"randomizeRotations": true,
+	"randomizeAxes":      "xz",
+	"replaceable": 90,
+	"drops": [],
+	"resistance": 1.5,
+    "faceCullMode": "NeverCull",
+	"sidesolid":  { "all": false },
+	"sideopaque": { "all": false },
+	"sideao":     { "all": false },
+	"emitsideao": { "all": false },
+	"lightAbsorption": 1,
+	"rainPermeable":   true,
+    "heldTpIdleAnimation": "holdbothhandslarge",
+    "heldTpUseAnimation": "twohandplaceblock",
+	"tpHandTransform": {
+		"translation": { "x": -1.23, "y": -0.91, "z": -0.8 },
+		"rotation":    { "x":    -2, "y":    25, "z":  -78 },
+		"scale": 0.4
+	},
+    "sounds": {
+		"place": "game:block/dirt",
+		"break": "game:block/dirt",
+		"hit":   "game:block/dirt",
+		"walk":  "game:walk/grass"
+	}
+}

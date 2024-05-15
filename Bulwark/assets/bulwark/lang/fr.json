@@ -1,0 +1,69 @@
+{
+    "game:tabname-bulwark": "Bulwark",
+
+    "Under {0}'s command for {1:0.#} days":                    "Sous le commandement de {0} pour {1:0.#} jours",
+    "Under {0}'s command in the name of {1} for {2:0.#} days": "Sous le commandement de {0} au nom de {1} pour {2:0.#} jours",
+
+    "{0} is currently being besieged by a small band": "{0} est actuellement assiégé(e) par une petite troupe",
+    "{0} is currently being besieged by a large band": "{0} est actuellement assiégé(e) par un groupe important",
+    "{0} is under attack!":               "{0} est attaqué(e)!",
+    "One of your claim is under attack!": "Un de vos territoire est attaqué!",
+    "{0} has been captured!":               "{0} a été capturé(e)!",
+    "One of your claim has been captured!": "Un de vos territoire a été capturé!",
+    "{0} has run out of food!":               "{0} est à court de nourriture!",
+    "One of your claim has run out of food!": "Un de vos territoire est à court de nourriture!",
+    "{0} has been destroyed!":               "{0} a été détruit!",
+    "One of your claim has been destroyed!": "Un de vos territoire a été détruit!",
+    "{0} captured {1}":               "{0} a capturé {1}",
+    "{0} no longer leagues with {1}": "{0} quitte {1}",
+    "{0} now leagues with {1}":       "{0} se ligue avec {1}",
+
+    "+{0} stronghold expectancy": "+{0} jour de maintien du bastion",
+
+    "You're not in a stronghold you claimed":          "Vous n'êtes pas dans un bastion qui vous appartiens",
+    "You can use /stronghold name to name your claim": "Vous pouvez utiliser <i>/stronghold name</i> pour nommer votre territoire",
+
+    "Banner of {0}": "Bannière de {0}",
+    "Ruins of {0}":  "Ruines de {0}",
+
+    "bulwark:block-flagpole-fort": "Mât (Fort)",
+    "bulwark:block-flagpole-city": "Mât (Ville)",
+
+    "bulwark:block-gabion-aged-*":        "Gabion (Vieilli)",
+    "bulwark:block-gabion-birch-*":       "Gabion (Bouleau)",
+    "bulwark:block-gabion-oak-*":         "Gabion (Chêne)",
+    "bulwark:block-gabion-maple-*":       "Gabion (Érable)",
+    "bulwark:block-gabion-pine-*":        "Gabion (Pin)",
+    "bulwark:block-gabion-acacia-*":      "Gabion (Acacia)",
+    "bulwark:block-gabion-kapok-*":       "Gabion (Fromager)",
+    "bulwark:block-gabion-baldcypress-*": "Gabion (Cyprès chauve)",
+    "bulwark:block-gabion-larch-*":       "Gabion (Mélèze)",
+    "bulwark:block-gabion-redwood-*":     "Gabion (Séquoia)",
+    "bulwark:block-gabion-walnut-*":      "Gabion (Noyer)",
+
+    "bulwark:block-logisticpost-copper":        "Poste logistique (Lances en cuivre)",
+    "bulwark:block-logisticpost-tinbronze":     "Poste logistique (Lances en bronze-étain)",
+    "bulwark:block-logisticpost-bismuthbronze": "Poste logistique (Lances en cuibronze-bismuthvre)",
+    "bulwark:block-logisticpost-blackbronze":   "Poste logistique (Lances en bronze noir)",
+    "bulwark:block-logisticpost-gold":          "Poste logistique (Lances en or)",
+    "bulwark:block-logisticpost-silver":        "Poste logistique (Lances en argent)",
+    "bulwark:block-logisticpost-iron":          "Poste logistique (Lances en fer)",
+    "bulwark:block-logisticpost-meteoriciron":  "Poste logistique (Lances en fer météorique)",
+    "bulwark:block-logisticpost-steel":         "Poste logistique (Lances en acier)",
+    "bulwark:block-logisticpost-ruined":        "Poste logistique (Lances en ruine)",
+
+    "game:ingameerror-stronghold-nobuildprivilege":         "Je ne peux pas construire ici. Cette zone est protégée",
+    "game:ingameerror-stronghold-nobreakprivilege-warning": "Endommager cette zone pourrait déclencher un conflit",
+    "game:ingameerror-stronghold-alreadyclaimed":           "Cette zone est déjà contrôlée",
+    "game:ingameerror-stronghold-undergroundflag":          "Ce drapeau doit être levé à la surface",
+
+    "game:blockhelp-flag-pullup":   "Lever le drapeau",
+    "game:blockhelp-flag-set":      "Attacher une bannière",
+    "game:blockhelp-flag-pulldown": "Baisser le drapeau",
+    "game:blockhelp-flag-remove":   "Détacher la bannière",
+
+    "game:blockhelp-barricade-build": "Construire",
+
+    "gamemechanicinfo-stronghold-title": "Bulwark: Guide des Bastions",
+    "gamemechanicinfo-stronghold-text": "<strong>Guide des Bastions</strong><br><br><strong>Les Bastions</strong><br>Les bastions sont centrés autour d'un drapeau placé à la surface, jusqu'à 10 blocs sous le sol au moment de la génération du monde (par défaut). Ces derniers restreignent le placement des blocs en dehors des équipement de siège dans une zone de 64x64x64 pour les <a href=\"handbook://block-bulwark:flagpole-fort\">forts</a> et dans une zone de 96x96x96 pour les <a href=\"handbook://block-bulwark:flagpole-city\">villes</a> (par défaut). Les membres reçoivent des alertes sur les attaques, les captures ou les destructions. Une grande quantité de nourriture est nécessaire pour maintenir les bastions actifs, avec jusqu'à 4 contenants autour du drapeau et de même autour de chaque poste logistique. Le joueur qui capture le drapeau obtient la propriété du bastion.<br><br><strong>Les Postes Logistiques</strong><br>Les postes logistiques permettent de lier plusieurs réserves de nourriture à un même drapeau, y compris les celliers. Ils doivent partager la même bannière avec le drapeau ; ainsi, leur capture arrête l'approvisionnement du bastion.<br><br><strong>Barricades</strong><br>Les barricades peuvent être installées dans les bastions ennemis. Elles doivent être brisées plusieurs fois avant de disparaître et sont instables, ne permettant pas l'empilement.<br>"
+}

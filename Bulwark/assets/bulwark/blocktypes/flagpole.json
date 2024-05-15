@@ -1,0 +1,72 @@
+{
+	"code": "flagpole",
+	"variantgroups": [{ "code": "type", "states": ["fort", "city"]}],
+	"behaviors": [
+        { "name": "Flag", "propertiesByType": {
+			"flagpole-fort": { "expectancyBonus": 0.5, "poleTop": 3, "poleBottom": 2 },
+			"flagpole-city": { "expectancyBonus":   0, "poleTop": 4, "poleBottom": 2 }
+		}},
+		{ "name": "Unstable" },
+        { "name": "Multiblock", "properties": {
+			"sizex": 1,
+			"sizeyByType": { "*-fort": 3, "*-city": 4 },
+			"sizez": 1,
+			"cposition": { "x": 0, "y": 0, "z": 0 }
+		}}
+    ],
+	"entityBehaviors": [{ "name": "FlagEntity", "properties": {
+		"protectionRadiusByType": { "flagpole-fort": 32, "flagpole-city": 48 },
+		"captureDuration": 12
+	}}],
+	"attributes": {
+		"canChisel": false,
+		"handbook": { "groupBy": [ "flagpole-*" ]}
+	},
+    "textures": {
+        "oak":   { "base": "game:block/wood/oak" },
+        "rope":  { "base": "game:item/resource/rope" }
+    },
+	"creativeinventory": { "general": [""], "bulwark": ["*"] },
+	"maxstacksize": 1,
+	"shape": { "base": "flag/flagpole-{type}" },
+	"blockmaterial": "wood",
+	"replaceable": 90,
+	"randomizeRotations": true,
+	"randomizeAxes":      "xz",
+	"collisionSelectionBox": {
+		"x1": 0.4, "y1": 0, "z1": 0.4,
+		"x2": 0.6, "y2": 1, "z2": 0.6
+	},
+    "faceCullMode": "NeverCull",
+	"sidesolid":  { "all": false },
+	"sideopaque": { "all": false },
+	"sideao":     { "all": false },
+	"emitsideao": { "all": false },
+	"lightAbsorption": 1,
+	"rainPermeable":   true,
+	"drops": [],
+	"heldTpIdleAnimation": "crudeOarIdle",
+	"guiTransform": {
+		"rotation": { "x":   0, "y":   0, "z": -45 },
+		"origin":   { "x": 0.5, "y": 1.5, "z": 0.5 },
+		"scale": 0.8
+	},
+	"fpHandTransform": {
+		"translation": { "x":   0, "y": 0, "z":   0 },
+		"rotation":    { "x":   0, "y": 0, "z":   0 },
+		"origin":      { "x": 0.5, "y": 1, "z": 0.5 },
+		"scale": 2.75
+	},
+	"tpHandTransform": {
+		"translation": { "x":   0, "y": 0.4, "z": -0.3 },
+		"rotation":    { "x":  60, "y":  19, "z": -115 },
+		"origin":      { "x": 0.5, "y":   0, "z":  0.5 },
+		"scale": 0.8
+	},
+	"groundTransform": {
+		"translation": { "x":   0, "y":   0, "z":   0 },
+		"rotation":    { "x": -90, "y":   0, "z":   0 },
+		"origin":      { "x": 0.5, "y": 1.5, "z": 0.5 },
+		"scale": 4.5
+	}
+}

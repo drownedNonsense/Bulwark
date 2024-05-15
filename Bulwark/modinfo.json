@@ -1,0 +1,11 @@
+{
+    "type":  "code",
+    "modid": "bulwark",
+    "name":  "Bulwark",
+    "authors": [ "Lastelle" ],
+    "description": "A civilisation mod",
+    "version": "0.0.8",
+    "dependencies": {
+        "game": ""
+    }
+}
