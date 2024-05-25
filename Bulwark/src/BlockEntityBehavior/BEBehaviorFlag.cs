@@ -84,7 +84,7 @@ namespace Bulwark {
                     this.renderer = new FlagRenderer(client, meshData, this.Pos, this, this.BlockBehavior.PoleTop, this.BlockBehavior.PoleBottom);
                     client.Event.RegisterRenderer(this.renderer, EnumRenderStage.Opaque, "flag");
                         
-                } // if ..
+                } 
 
 
                 this.updateRef  = api.Event.RegisterGameTickListener(this.Update, 20);
@@ -94,7 +94,7 @@ namespace Bulwark {
                 if (this.Stronghold.IsClaimed)
                     this.Api.ModLoader.GetModSystem<FortificationModSystem>().TryRegisterStronghold(this.Stronghold);
 
-            } // void ..
+            } 
 
 
             public override void OnBlockBroken(IPlayer byPlayer = null) {
@@ -107,7 +107,7 @@ namespace Bulwark {
                 this.Stronghold.Unclaim(EnumUnclaimCause.FlagBroken);
                 this.Api.ModLoader.GetModSystem<FortificationModSystem>().RemoveStronghold(this.Stronghold);
                 if (this.Banner != null) this.Api.World.SpawnItemEntity(this.Banner, this.Pos.ToVec3d());
-            } // void ..
+            } 
 
 
             public override void OnBlockRemoved() {
@@ -118,7 +118,7 @@ namespace Bulwark {
                 if (this.captureRef.HasValue) this.Api.Event.UnregisterGameTickListener(this.captureRef.Value);
                 if (this.cellarRef.HasValue)  this.Api.Event.UnregisterGameTickListener(this.cellarRef.Value);
                 this.Api.ModLoader.GetModSystem<FortificationModSystem>().RemoveStronghold(this.Stronghold);
-            } // void ..
+            } 
 
 
             public override void OnBlockUnloaded() {
@@ -129,7 +129,7 @@ namespace Bulwark {
                 if (this.captureRef.HasValue) this.Api.Event.UnregisterGameTickListener(this.captureRef.Value);
                 if (this.cellarRef.HasValue)  this.Api.Event.UnregisterGameTickListener(this.cellarRef.Value);
                 this.Api.ModLoader.GetModSystem<FortificationModSystem>().RemoveStronghold(this.Stronghold);
-            } // void ..
+            } 
 
 
         //===============================
@@ -138,31 +138,29 @@ namespace Bulwark {
 
             public override void GetBlockInfo(IPlayer forPlayer, StringBuilder dsc) {
                 base.GetBlockInfo(forPlayer, dsc);
-
+                var info = "";
                 if (this.Stronghold.Name is string name)
-                    dsc.AppendLine("<font color=\"#ccc\"><i>" + Lang.Get("Banner of {0}", name) + "</i></font>");
+                    info = "<font color=\"#ccc\"><i>" + Lang.Get("Banner of {0}", name) + "</i></font>";
 
                 if (this.NowClaimedUntilDay is double claimedUntilDay) {
                     double remaining = claimedUntilDay - this.Api.World.Calendar.TotalDays;
                     
-                    if (double.IsPositive(remaining)) {
-                        if (this.Stronghold.PlayerName is not null)
-                            if (this.Stronghold.GroupName is not null) {
-                                dsc.AppendLine(Lang.Get(
-                                    "Under {0}'s command in the name of {1} for {2:0.#} days",
-                                    this.Stronghold.PlayerName,
-                                    this.Stronghold.GroupName,
-                                    remaining
-                                )); // ..
-                            } else dsc.AppendLine(Lang.Get(
-                                    "Under {0}'s command for {1:0.#} days",
-                                    this.Stronghold.PlayerName,
-                                    remaining
-                                )); // ..
-                    } // if ..
-                } // if ..
-            } // void ..
-
+                    if (
+                        double.IsPositive(remaining)
+                        && this.Stronghold.PlayerName is not null
+                    ) {
+                        info = this.Stronghold.GroupName is not null
+                            ? Lang.Get("Under {0}'s command in the name of {1} for {2:0.#} days",
+                                this.Stronghold.PlayerName,
+                                this.Stronghold.GroupName,
+                                remaining)
+                            : Lang.Get("Under {0}'s command for {1:0.#} days",
+                                this.Stronghold.PlayerName,
+                                remaining);
+                    } 
+                }
+                dsc.AppendLine(info);
+            }
 
             private void ComputeCellar(float _) {
                 if (this.Stronghold.IsClaimed) {
@@ -184,9 +182,8 @@ namespace Bulwark {
                                             * itemStack.StackSize
                                             * (BulwarkModSystem.ClaimDurationPerSatiety * (1f + this.BlockBehavior.ExpectancyBonus));
 
-                } // if ..
-            } // void ..
-
+                }
+            }
 
             private void UpdateCellar(float deltaTime) {
                 if (this.Stronghold.IsClaimed) {
@@ -219,10 +216,9 @@ namespace Bulwark {
                                         itemSlot.TakeOut(targetSize);
                                         itemSlot.MarkDirty();
 
-                                    } // if ..
-                } // if ..
-            } // void ..
-
+                                    } 
+                } 
+            } 
 
             private void Update(float deltaTime) {
 
@@ -238,45 +234,44 @@ namespace Bulwark {
                         this.Banner = null;
                         this.renderer?.Dispose();
                         this.renderer = null;
-                    } // if ..
+                    } 
 
                     this.Blockentity.MarkDirty();
                     this.Stronghold.Unclaim(unclaimCause);
 
-                } // if ..
-            } // void ..
+                } 
+            } 
 
+            public bool TryStartCapture(IPlayer byPlayer)
+            {
+                var hasCaptureState = this.captureRef == null && this.capturedBy == null;
+                if (!hasCaptureState) return true;
+                
+                //TODO: put 'Inactivity Raid Blocker' logic here
 
-            public void TryStartCapture(IPlayer byPlayer) {
-                if (this.captureRef == null && this.capturedBy == null) {
+                this.capturedBy = byPlayer;
+                this.captureRef = this.Api.Event.RegisterGameTickListener(this.CaptureUpdate, 20);
 
-                    this.capturedBy = byPlayer;
-                    this.captureRef = this.Api.Event.RegisterGameTickListener(this.CaptureUpdate, 20);
+                if (this.Banner == null
+                    && byPlayer.InventoryManager.ActiveHotbarSlot.CanTake()
+                    && (byPlayer.InventoryManager.ActiveHotbarSlot.Itemstack?.Collectible.Code.Path.Contains("cloth-") ?? false)
+                ) {
+                    this.Banner = this.capturedBy.InventoryManager.ActiveHotbarSlot.TakeOut(1);
+                    this.capturedBy.InventoryManager.ActiveHotbarSlot.MarkDirty();
+                    this.Blockentity.MarkDirty();
 
-                    if (this.Banner == null
-                        && byPlayer.InventoryManager.ActiveHotbarSlot.CanTake()
-                        && (byPlayer.InventoryManager.ActiveHotbarSlot.Itemstack?.Collectible.Code.Path.Contains("cloth-") ?? false)
-                    ) {
+                    if (this.Api is ICoreClientAPI client) {
+                        this.renderer?.Dispose();
+                        client.Tesselator.TesselateShape(this.Banner.Item, Shape.TryGet(client, "bulwark:shapes/flag/banner.json"), out MeshData meshData);
+                        this.renderer = new FlagRenderer(client, meshData, this.Pos, this, this.BlockBehavior.PoleTop, this.BlockBehavior.PoleBottom);
+                        client.Event.RegisterRenderer(this.renderer, EnumRenderStage.Opaque, "flag");
+                    }
+                }
 
-                        this.Banner = this.capturedBy.InventoryManager.ActiveHotbarSlot.TakeOut(1);
-                        this.capturedBy.InventoryManager.ActiveHotbarSlot.MarkDirty();
-                        this.Blockentity.MarkDirty();
-
-                        if (this.Api is ICoreClientAPI client) {
-                        
-                            this.renderer?.Dispose();
-                            client.Tesselator.TesselateShape(this.Banner.Item, Shape.TryGet(client, "bulwark:shapes/flag/banner.json"), out MeshData meshData);
-                            this.renderer = new FlagRenderer(client, meshData, this.Pos, this, this.BlockBehavior.PoleTop, this.BlockBehavior.PoleBottom);
-                            client.Event.RegisterRenderer(this.renderer, EnumRenderStage.Opaque, "flag");
-
-                        } // if ..
-                    } // if ..             
-                } // if ..
-            } // void ..
-
+                return true;
+            }
 
             private void CaptureUpdate(float deltaTime) {
-
                 this.captureDirection = (this.Api.Side.IsServer() ? this.capturedBy.Entity.ServerControls.Sprint : this.capturedBy.Entity.Controls.Sprint)
                     ? EnumCaptureDirection.Unclaim
                     : EnumCaptureDirection.Claim;
@@ -296,8 +291,8 @@ namespace Bulwark {
 
                         } else if (this.capturedBy is IServerPlayer serverPlayer)
                             serverPlayer.SendIngameError("stronghold-undergroundflag");
-                } // if ..
-            } // void ..
+                } 
+            } 
 
 
             public void EndCapture() {
@@ -305,7 +300,7 @@ namespace Bulwark {
                 this.captureDirection = EnumCaptureDirection.Still;
                 this.captureRef       = null;
                 this.capturedBy       = null;
-            } // void ..
+            } 
 
 
             //-------------------------------
@@ -330,7 +325,7 @@ namespace Bulwark {
                     } else {
                         this.Stronghold.PlayerUID  = null;
                         this.Stronghold.PlayerName = null;
-                    } // if ..
+                    } 
 
                     if (tree.GetInt("claimedGroupUID") is int groupUID && groupUID != 0
                         && tree.GetString("claimedGroupName") is string groupName
@@ -340,7 +335,7 @@ namespace Bulwark {
                     } else {
                         this.Stronghold.GroupUID  = null;
                         this.Stronghold.GroupName = null;
-                    } // if ..
+                    } 
 
                     if (tree.GetString("areaName") is string name) this.Stronghold.Name = name;
 
@@ -348,7 +343,7 @@ namespace Bulwark {
 
                     base.FromTreeAttributes(tree, worldForResolving);
 
-                } // void ..
+                } 
 
 
                 public override void ToTreeAttributes(ITreeAttribute tree) {
@@ -369,6 +364,6 @@ namespace Bulwark {
 
                     base.ToTreeAttributes(tree);
 
-                } // void ..
+                } 
     } // class ..
 } // namespace ..
